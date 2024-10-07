@@ -1,0 +1,90 @@
+body {
+    background-image: url("99.jpg");
+    font-family: system-ui, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+    /* Adjust the background to repeat smaller images */
+    background-size: 275px 206px; /* Each instance of the image will be 100px by 100px */
+    background-repeat: repeat;
+    background-position: center;
+}
+
+.login-container {
+    background-color: pink;
+   align-items: center;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 20px 5px hotpink;
+}
+
+input {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+button {
+    background-color: hotpink;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: deeppink;
+}
+
+
+/* Small hearts (animated) */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    transform: rotate(45deg);
+    animation: floatUp 4s ease-in infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: 10px;
+    top: 0;
+}
+
+/* Animation for floating hearts */
+@keyframes floatUp {
+    0% {
+        transform: scale(0.5) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) translateY(-100vh);
+        opacity: 0;
+    }
+}
+

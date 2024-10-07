@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>puzelki</title>
+    <link rel="stylesheet" href="puzzle.css">
+</head>
+<body>
+    
+    <h1>Klikaj az wyklikasz</h1>
+    
+    <g style="--n: 5;">
+        <!-- The grid will be populated by JavaScript -->
+    </g>
+
+    <div id="congratulations" style="display: none; text-align: center;">
+        <h2>Congratulations! You've completed the puzzle!</h2>
+        <p>WAIT...</p>
+    </div>
+
+    <script>
+        const n = 5; // Number of rows and columns
+        const size = 70; // Size of each puzzle piece
+        const g = document.querySelector('g'); // Puzzle grid container
+        const congratulationsDiv = document.getElementById('congratulations'); // Congratulatory message
+
+        // Create an array of numbers for the puzzle pieces and shuffle it
+        const pieces = Array.from({ length: n * n }, (_, i) => i);
+        pieces.sort(() => Math.random() - 0.5); // Shuffle pieces
+
+        // Dynamically generate the grid and apply random positioning
+        pieces.forEach((i) => {
+            const z = document.createElement('z');
+            const a = document.createElement('a');
+            const b = document.createElement('b');
+
+            // Calculate the correct background position for each piece
+            const x = (i % n) * -size;
+            const y = Math.floor(i / n) * -size;
+
+            // Set background-position based on the original grid position
+            b.style.backgroundPosition = `${x}px ${y}px`;
+            b.setAttribute('draggable', 'true');
+            b.dataset.index = i; // Set a data attribute for the piece's index
+
+            // Drag and drop events
+            b.addEventListener('dragstart', dragStart);
+            z.addEventListener('dragover', dragOver);
+            z.addEventListener('drop', drop);
+
+            z.appendChild(a);
+            z.appendChild(b);
+            g.appendChild(z);
+        });
+
+        let draggedPiece = null;
+
+        function dragStart(e) {
+            draggedPiece = e.target;
+        }
+
+        function dragOver(e) {
+            e.preventDefault(); // Prevent default to allow dropping
+        }
+
+        function drop(e) {
+            const targetPiece = e.target.closest('b'); // Find the closest puzzle piece
+            if (targetPiece && draggedPiece !== targetPiece) {
+                // Swap the pieces
+                const parent1 = draggedPiece.parentNode;
+                const parent2 = targetPiece.parentNode;
+
+                parent1.appendChild(targetPiece);
+                parent2.appendChild(draggedPiece);
+
+                // Check if the puzzle is solved
+                checkPuzzleCompletion();
+            }
+        }
+
+        function checkPuzzleCompletion() {
+            const pieces = document.querySelectorAll('b');
+            let isComplete = true;
+
+            pieces.forEach((piece, index) => {
+                // Check if the current piece's data-index matches its position
+                if (parseInt(piece.dataset.index) !== index) {
+                    isComplete = false;
+                }
+            });
+
+            if (isComplete) {
+                // Show the congratulations message
+                congratulationsDiv.style.display = 'block';
+
+                // Redirect to index.html after 3 seconds
+                setTimeout(() => {
+                    window.location.href = '/8,5lo/lo.html';
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+</html>

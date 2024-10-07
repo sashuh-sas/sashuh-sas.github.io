@@ -1,0 +1,176 @@
+
+  body {
+    background-color: pink;
+  }
+  h1 {
+    text-align: center;
+    font-family: 'Krona One', sans-serif;
+    color: deeppink;
+    font-size: 300%;
+  }
+  h2 {
+    text-align: center;
+    font-family: 'Krona One', sans-serif;
+    color: deeppink;
+    font-size: 150%;
+    margin-top: -20px;
+  }
+  h4 {
+    padding: 5px;
+    font-family: 'Krona One', sans-serif;
+    color: deeppink;
+    font-size: 130%;
+    text-align: center;
+  }
+
+  #result2 {
+    min-height: 300px;
+    background-color: pink;
+    max-height: 310px;
+    min-width: 155px;
+    max-width: 180px;
+    border: 5px double deeppink;
+    border-radius: 20px;
+    box-shadow: gray 10px 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding: 5px;
+  }
+  #result3 {
+    min-height: 300px;
+    background-color: pink;
+    max-height: 310px;
+    min-width: 100px;
+    max-width: 160px;
+    border: 5px double deeppink;
+    border-radius: 20px;
+    box-shadow: gray 10px 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding: 5px;
+  }
+  
+  button {
+    background-color: gold;
+    color: deeppink;
+    font-weight: bold;
+    width: 150px;
+    border-radius: 20px;
+    height: 50px;
+    border: none;
+  }
+  input {
+    color: pink;
+    font-weight: bold;
+    width: 200px;
+    height: 50px;
+    border: none;
+    margin-left: 0px;
+    margin-right: 10px;
+    border-radius: 10px;
+  }
+  
+  #resultarea {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  #inputarea {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  span {
+    font-family: 'Krona One', sans-serif;
+    color: deeppink;
+  }
+  #other {
+    background-color:  #ffe6ea;
+    align-self: center;
+    width: 200px;
+  }
+  #submit {
+    padding: 50x;
+    background-color:  #ffe6ea;
+  }
+  #giveup {
+    background-color:  #ffe6ea;
+    margin-left: 10px;
+  }
+  ::placeholder {
+    color: deeppink;
+    opacity: 0.7;
+  }
+  button:hover {
+    box-shadow: gray 5px 5px;
+  }
+  #attempt {
+    font-family: sans;
+    padding: 5px;
+    font-weight: bold;
+    color: deeppink;
+    font-size: 15px;
+    background-color: pink;
+    margin-bottom: 10px;
+  }
+  h5 {
+    color: deeppink;
+    font-size: 30px;
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+    margin-top: -10px;
+    font-family: sans;
+  }
+  #score {
+    font-family: sans;
+    padding: 5px;
+    font-weight: bold;
+    color: deeppink;
+    font-size: 15px;
+    background-color: pink;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  #streak {
+    font-family: sans;
+    padding: 5px;
+    font-weight: bold;
+    color: deeppink;
+    font-size: 15px;
+    background-color: pink;
+    margin-bottom: 10px;
+  }
+  #guessessofar {
+    font-family: sans;
+    padding: 5px;
+    font-weight: bold;
+    color: deeppink;
+    font-size: 15px;
+    background-color: pink;
+  }
+  #stats {
+    text-align: center;
+    font-weight: bold;
+    color: deeppink;
+    font-family: 'Krona One', sans-serif;
+    font-size: 130%;
+  }
+  #guesscounter {
+    font-size: 14px;
+  }
+  
+  #currentguess {
+    color: deeppink;
+    font-family: sans;
+    font-weight: bold;
+    margin: 7px;
+    background-color:  #ffe6ea;
+    padding: 10px;
+  }

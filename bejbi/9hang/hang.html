@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, 
+                                   initial-scale=1.0" />
+    <title>patyczak</title>
+    <link rel="stylesheet" href="hang.css" />
+    <script src="hang.js" defer></script>
+  </head>
+
+  <body>
+    <div class="game-modal" id="over">
+      <div class="content">
+        <h4></h4>
+        <p>poprawnym słowem: <b>rainbow</b></p>
+        <button class="play-again">buuummm</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="hangman-box">
+        <img
+          src=
+             "https://media.geeksforgeeks.org
+              /wp-content/uploads/20240215173028/0.png"
+          alt="hangman-img"
+        />
+        <h1>wisielec</h1>
+        <div class="timer">pozostały czas:
+          <span id="timer-display">3:00</span>
+        </div>
+      </div>
+      <div class="game-box">
+        <ul class="word-display"></ul>
+
+        <h4 class="guesses-text">
+          błędy:
+          <b>0 / 6</b>
+        </h4>
+        <div class="keyboard"></div>
+      </div>
+    </div>
+  </body>
+</html>

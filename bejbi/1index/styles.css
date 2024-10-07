@@ -1,0 +1,110 @@
+/* General 2000s aesthetic - bright neon colors, shadows, and animations */
+body {
+    background-image: url("back0.jpg"), none;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0;
+}
+
+
+#fishContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    animation: pulse 1s infinite;
+}
+
+#fish {
+    width: 150px; /* Adjust size based on your image */
+    height: auto;
+    filter: drop-shadow(0 0 10px deeppink); /* Default shadow color */
+    transition: filter 0.4s ease;
+}
+
+/* Pulse Animation for fish */
+@keyframes pulse {
+    0% {
+        transform: scale(1) translate(-50%, -50%);
+    }
+    50% {
+        transform: scale(1.1) translate(-50%, -50%);
+    }
+    100% {
+        transform: scale(1) translate(-50%, -50%);
+    }
+}
+
+/* Color-changing shadow effect */
+@keyframes changeShadowColor {
+    0% {
+        filter: drop-shadow(0 0 10px pink);
+    }
+    25% {
+        filter: drop-shadow(0 0 10px MediumVioletRed);
+    }
+    50% {
+        filter: drop-shadow(0 0 10px Magenta);
+    }
+    75% {
+        filter: drop-shadow(0 0 10px LavenderBlush);
+    }
+    100% {
+        filter: drop-shadow(0 0 10px DeepPink);
+    }
+}
+
+/* Explosion effect */
+#explosion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    display: none;
+    pointer-events: none;
+}
+
+.bubble {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    animation: bubbleMove 2s ease-out;
+    z-index: -1; /* Behind the fish */
+}
+
+@keyframes bubbleMove {
+    0% {
+        opacity: 1;
+        transform: scale(1) translate(0, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2.5) translateY(-300px);
+    }
+}
+
+/* Login page (hidden until triggered) */
+#loginPage {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 2em;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}

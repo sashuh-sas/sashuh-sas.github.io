@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>numerki</title>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="number.css">
+</head>
+<body onload="generate();">
+  <h1>numeranka zgadywanka</h1>
+  <h2>od 0 do 1000</h2>
+ <h5 id="nomoreattempts"></h5>
+  <div id="resultarea">
+  <section id="result"></section>
+    <section id="result2">
+      <h4 id="status"></h4>
+    </section>
+
+
+    <section id="result3">
+      <p id="stats">ojojjj:</p>
+      <div id="attempt">próby:<span id="attemptcounter"></span></div>
+      <div id="guessessofar">twoje próby (bardzo złe):<span id="guesscounter"></span></div>
+
+    </section>
+
+
+ </div>
+
+  <div id="inputarea">
+    <input type="number" placeholder="tu spróbuj wpisać numerek..." id="guess">
+  <button onclick="check()" id="submit">prześlij odpowiedź</button>
+  <button onclick="reveal()" id="giveup"> tu możesz się poddać...</button>
+
+  <button onclick="generate()" id="other">spróbuj następny numerek DASZ RADĘ!!!!</button>
+  </div>
+    <script src="number.js"></script>
+</body>
+</html>

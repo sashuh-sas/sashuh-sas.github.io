@@ -1,0 +1,77 @@
+:root {
+    --n: 5; /* number of columns/rows */
+    --s: 70px; /* size of the puzzle */
+    --r: 12px;
+    --i: url('puzz.jpg'); /* puzzle image */
+}
+
+
+body {
+    background-image: url("back5.jpg");
+    color: #fff;
+    font-family: system-ui, sans-serif;
+    display: grid;
+    
+    /* Adjust the background to repeat smaller images */
+    background-size: 108px 222px; /* Each instance of the image will be 100px by 100px */
+    background-repeat: repeat;
+    background-position: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    text-align: center;
+}
+
+p {
+    font-size: .8rem;
+    text-align: center;
+}
+
+g {
+    display: grid;
+    grid-template-columns: repeat(var(--n), var(--s));
+    gap: 0;
+    width: fit-content;
+    margin: auto;
+    border: 1px solid;
+}
+
+z {
+    position: relative;
+    width: var(--s);
+    height: var(--s);
+    display: grid;
+}
+
+b {
+    position: absolute;
+    width: var(--s);
+    height: var(--s);
+    background: var(--i);
+    background-size: calc(var(--n) * var(--s)) calc(var(--n) * var(--s));
+    filter: drop-shadow(0 0 2px deeppink);
+    cursor: grab;
+    transition: transform 0.2s ease-in-out;
+    pointer-events: initial;
+}
+
+a {
+    width: 100%;
+    height: 100%;
+    pointer-events: initial;
+}
+
+b:before {
+    content: "";
+    display: block;
+}
+
+
+
+/* Puzzle grid styling for hover effects */
+z:hover b {
+    transform: translate(0) !important;
+    filter: none !important;
+}
